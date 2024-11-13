@@ -1,0 +1,205 @@
+@use './abstract/colors';
+
+
+.header-main-nav {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.main-nav {
+    width: 1000px;
+    height: 600px;
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "about contact mydiv"
+    "showcase showcase blog";
+
+    @media screen and (max-width: 800px) {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "mydiv"
+        "about"
+        "contact"
+        "showcase"
+        "blog"
+        ;
+        
+    }
+}
+
+
+
+
+.links {
+    border-width: 3px;
+    border-style: dashed;
+    border-radius: 16px;
+    width: 100%;
+}
+
+
+
+#about {
+  
+  grid-area: about ;
+  border-color:  colors.$about-bg;
+
+}
+
+.about {
+    background-color: colors.$about-bg;
+   
+}
+
+#contact {
+    grid-area: contact;
+    border-color:  colors.$contact-bg;
+}
+
+.contact {
+    background-color:colors.$contact-bg ;
+}
+
+
+#showcase {
+    grid-area: showcase;
+    border-color:  colors.$showcase-bg;
+}
+
+.showcase {
+    background-color: colors.$showcase-bg;
+}
+
+#blog {
+    grid-area: blog;
+    border-color:  colors.$blog-bg;
+}
+
+.blog {
+    background-color: colors.$blog-bg;
+}
+
+#mydiv {
+    grid-area: mydiv;
+    
+}
+
+.links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bolder;
+    border-radius: 16px;
+    color: black;
+
+
+}
+
+
+// Sidebar 
+
+.main-sidebar {
+    position: fixed;
+    //border: 2px solid white;
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        left: 0; // swap to left
+        right:auto; 
+    }
+  
+  
+    
+}
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    
+   
+}
+
+.sidebar-list li {
+    
+    border: 2px dashed;
+    border-radius: 16px;
+    width: 100px;
+    height: 100px;
+
+    @media screen and (max-width: 720px) {
+       width: 75px;
+       height: 50px;
+        
+    }
+    
+}
+
+.sidebar-list li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    border-radius: 16px;
+    font-weight: bolder;
+    font-size: 18px;
+    @media screen and (max-width: 720px) {
+       
+         font-size: 75%; // body based font-size will set to 62.5%
+     }
+
+   
+}
+
+.menu-icon {
+    width: 60px;
+    height: 50px;
+    background-color: red;
+    position: fixed;
+    top: 0;
+    visibility: hidden; // still affects the layout
+
+    @media screen and (max-width: 768px) {
+        
+       visibility: visible;
+    }
+}
+
+// Animation for both homepage and sidebar
+.links a, .sidebar-list li a:hover {
+    transition: color 0.4s linear, background-color 0.3s ease-out;
+}
+.links a:hover, .sidebar-list li a:hover  {
+    background-color:black;
+    color: white;
+    
+}
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}
