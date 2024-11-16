@@ -1,8 +1,9 @@
+import { RefType } from "../components/hooks/useIntersectionObservation";
 import { memo } from "react";
-const Homepage = function(): React.JSX.Element {
+const Homepage = function({element, inView}: RefType): React.JSX.Element {
 
     return (
-       <header className="header-main-nav">
+       <header className={`header-main-nav ${inView ? "" : ""}`} ref={element} id="">
          <nav className="main-nav">
             <div className="links" id="about"> 
                 <a href="#about-section" className="about"> About</a>

@@ -1,4 +1,4 @@
-@use './abstract/colors';
+@use '../abstract/colors';
 
 
 .header-main-nav {
@@ -6,6 +6,11 @@
    display: flex;
    justify-content: center;
    align-items: center;
+  
+   
+   @media screen and (max-width: 800px) {
+    
+    }
 }
 
 .main-nav {
@@ -31,6 +36,8 @@
         "blog"
         ;
         
+        width: 75%;
+        
     }
 }
 
@@ -50,6 +57,7 @@
   
   grid-area: about ;
   border-color:  colors.$about-bg;
+  
 
 }
 
@@ -57,6 +65,15 @@
     background-color: colors.$about-bg;
    
 }
+
+.about-mobile, .contact-mobile, 
+.showcase-mobile, .blog-mobile {
+    transform: translateX(-100%);
+   
+}
+
+
+
 
 #contact {
     grid-area: contact;
@@ -103,13 +120,41 @@
     border-radius: 16px;
     color: black;
 
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
+
 
 }
 
 
-// Sidebar 
+//Desktop Sidebar & Mobile Sidebar
 
-.main-sidebar {
+.mobile-sidebar {
+    position: fixed;
+    //border: 2px solid white;
+    
+    left: 0;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    display: none;
+
+
+    @media screen and (max-width: 768px) {
+        visibility: visible;
+        display: flex;
+    }
+  
+  
+    
+}
+
+.desktop-sidebar  {
     position: fixed;
     //border: 2px solid white;
     right: 0px;
@@ -118,27 +163,31 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     @media screen and (max-width: 768px) {
-        left: 0; // swap to left
-        right:auto; 
+
+        display: none;
+    
     }
-  
-  
-    
-}
-.sidebar-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    height: 100%;
-    
-   
 }
 
-.sidebar-list li {
+
+.menu-icon {
+    width: 60px;
+    height: 50px;
+    background-color: red;
+    border-radius: 16px;
+    position: fixed;
+    top: 0;
+    visibility: hidden; // still affects the layout
+
+    @media screen and (max-width: 768px) {
+        
+       visibility: visible;
+    }
+}
+
+.mobile-sidebar-list li, .desktop-sidebar-list li {
     
     border: 2px dashed;
     border-radius: 16px;
@@ -153,7 +202,7 @@
     
 }
 
-.sidebar-list li a {
+.mobile-sidebar-list li a, .desktop-sidebar-list li a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,26 +216,26 @@
     @media screen and (max-width: 720px) {
        
          font-size: 75%; // body based font-size will set to 62.5%
+       
      }
 
    
 }
-
-.menu-icon {
-    width: 60px;
-    height: 50px;
-    background-color: red;
-    position: fixed;
-    top: 0;
-    visibility: hidden; // still affects the layout
-
-    @media screen and (max-width: 768px) {
-        
-       visibility: visible;
-    }
+.mobile-sidebar-list, .desktop-sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    
+   
 }
 
-// Animation for both homepage and sidebar
+
+
+// Animation for both homepage and sidebars
 .links a, .sidebar-list li a:hover {
     transition: color 0.4s linear, background-color 0.3s ease-out;
 }
@@ -195,6 +244,30 @@
     color: white;
     
 }
+
+@keyframes links-animation {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animate {
+    animation: links-animation 200ms forwards;
+}
+
+.about-mobile.animate { animation-delay: 0ms; }      /* No delay for the first item */
+.contact-mobile.animate { animation-delay: 100ms; }         /* 100ms delay for the second item */
+.showcase-mobile.animate { animation-delay: 150ms; }        /* 200ms delay for the third item */
+.blog-mobile.animate { animation-delay: 200ms; } 
 
 .show {
     visibility: visible;
