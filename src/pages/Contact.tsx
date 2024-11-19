@@ -9,7 +9,7 @@ const Contact = function ({element, inView}: RefType): React.JSX.Element {
            /*<section id="contact-section" ref={element} className={` ${inView ? 'show-section' : ''}`} >  */
             <section id="contact-section" ref={element} className={` ${inView ? 'show-section' : ''}`} > 
                     <figure  className={` ${inView ? 'show-section' : ''}`}>
-                        <img src="public/images/alien.png" alt="alien" id="alien"></img>
+                        <img src="/images/alien.png" alt="alien" id="alien"></img>
                         <figcaption> <a href="https://www.freepik.com/icon/alien_6542598">Icon by Freepik</a></figcaption>
                     </figure>
                     
