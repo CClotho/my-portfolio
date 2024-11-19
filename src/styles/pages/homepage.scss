@@ -2,11 +2,11 @@
 
 
 .header-main-nav {
-   min-height: 100vh;
+   min-height: 100vh;   
    display: flex;
    justify-content: center;
    align-items: center;
-  
+ 
    
    @media screen and (max-width: 800px) {
     
@@ -66,6 +66,7 @@
    
 }
 
+
 .about-mobile, .contact-mobile, 
 .showcase-mobile, .blog-mobile {
     transform: translateX(-100%);
@@ -115,7 +116,7 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bolder;
     border-radius: 16px;
     color: black;
@@ -212,10 +213,9 @@
     color: black;
     border-radius: 16px;
     font-weight: bolder;
-    font-size: 18px;
     @media screen and (max-width: 720px) {
        
-         font-size: 75%; // body based font-size will set to 62.5%
+        // font-size: 75%; // body based font-size will set to 62.5%
        
      }
 
@@ -268,6 +268,19 @@
 .contact-mobile.animate { animation-delay: 100ms; }         /* 100ms delay for the second item */
 .showcase-mobile.animate { animation-delay: 150ms; }        /* 200ms delay for the third item */
 .blog-mobile.animate { animation-delay: 200ms; } 
+
+#k-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 16px;
+    border: 3px dashed blue;
+    @media screen and (max-width: 768px) {
+        font-size: 1em;
+    }
+}
+
 
 .show {
     visibility: visible;

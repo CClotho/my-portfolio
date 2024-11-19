@@ -3,15 +3,15 @@ import { memo } from "react";
 const Homepage = function({element, inView}: RefType): React.JSX.Element {
 
     return (
-       <header className={`header-main-nav ${inView ? "" : ""}`} ref={element} id="">
-         <nav className="main-nav">
+       <header className="header-main-nav " ref={element} id="">
+         <nav className={`main-nav ${inView ? "" : ""}`}>
             <div className="links" id="about"> 
                 <a href="#about-section" className="about"> About</a>
             </div>
             <div className="links" id="contact">
                 <a href="#contact-section" className="contact">Contact</a>
             </div>
-            <div id="mydiv">myDiv</div>
+            <div id="k-box" className={`${inView ? "slide-in-vertically" : ""}`}>K DEV</div>
             <div className="links" id="showcase">
                 <a href="#showcase-section" className="showcase">Showcase</a>
             </div>

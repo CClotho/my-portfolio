@@ -3,14 +3,30 @@ import { RefType } from "../components/hooks/useIntersectionObservation";
 
 
 const Contact = function ({element, inView}: RefType): React.JSX.Element {
-    //const  {updatedRefs} = useIntersectionObserver();
+   
     
     return (
-      
-            <section id="contact-section" ref={element} className={`${inView ? 'slide-in-active' : ''}`} > 
-                <div className="contact-information">
-                    <h2> I'm in the contact section </h2>
-                </div>
+           /*<section id="contact-section" ref={element} className={` ${inView ? 'show-section' : ''}`} >  */
+            <section id="contact-section" ref={element} className={` ${inView ? 'show-section' : ''}`} > 
+                    <figure  className={` ${inView ? 'show-section' : ''}`}>
+                        <img src="public/images/alien.png" alt="alien" id="alien"></img>
+                        <figcaption> <a href="https://www.freepik.com/icon/alien_6542598">Icon by Freepik</a></figcaption>
+                    </figure>
+                    
+                    <div className={`contact-information ${inView ? 'slide-in-active' : ''}`}>
+                    <h2> Contact Me: </h2>
+
+                    <ul className="contact-list">
+                        <li>Email: <a href="mailto:kelisi4@outlook.com">kelisi4@outlook.com</a></li>
+                        <li>GitHub: <a href="https://github.com/CClotho" target="blank"> CClotho</a></li>
+                      
+                    </ul>
+
+                   
+                   
+                  
+                    </div>
+                
             </section>
         
     )

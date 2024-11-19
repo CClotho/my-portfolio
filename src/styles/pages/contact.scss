@@ -1,25 +1,71 @@
 @use '../abstract/colors';
 #contact-section {
-    min-height: 100vh;
-   visibility: hidden;
-   border: 3px dashed colors.$contact-bg;
+  min-height: 100vh;
+
+   border: 3px dashed black;
    background-color: colors.$contact-bg;
    border-radius: 16px;
    margin-top: 16px;
    display: flex;
    justify-content: center;
+
+   @media screen and (max-width: 768px) {
+      flex-direction: column;
+   }
+ 
    
 }
 
 .contact-information {
-  border: 3px solid white;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 16px;
-  width: 70%;
-
   margin: 2rem;
+  visibility: hidden;
+  color: white;
+  
+  
 }
 
 #contact-section:hover {
  
 
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+
+  
+}
+.contact-list li {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 1.7em;
+  
+}
+
+.contact-list li a {
+ 
+  color: colors.$contact-bg;
+}
+figure  {
+  visibility: hidden;
+}
+
+figcaption a {
+  text-decoration: none;
+}
+
+#alien {
+  margin-top: 16px;
+  width: 300px;
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
+  }
 }

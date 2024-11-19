@@ -1,12 +1,14 @@
 
 import { useRef, useState, useEffect} from 'react';
 import About from './pages/About';
-import Homepage from './pages/Homepage'
+import Homepage from './pages/Homepage';
 import useIntersectionObserver from './components/hooks/useIntersectionObservation';
 import Contact from './pages/Contact';
 import MobileSidebar from './pages/shared/MobileSidebar';
 import DesktopSidebar from './pages/shared/DesktopSidebar';
-
+import useSoloObserver from './components/hooks/useSoloObserver';
+import Showcase from './pages/Showcase';
+import Blog from './pages/Blog';
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
  
  const normalRef = useRef<HTMLDivElement>(null);
  const  {updatedRefs} = useIntersectionObserver();
-
+ const {ref, visible} = useSoloObserver();
   
  
  console.log("Updated Refs", updatedRefs)
@@ -28,9 +30,10 @@ function App() {
       <Homepage element={updatedRefs[0].element} inView={updatedRefs[0].inView}/>
       {/*add background color in the page itself and just animate the entrance*/}
       <About element={updatedRefs[1].element} inView={updatedRefs[1].inView}/>
-      
-      <Contact  element={updatedRefs[2].element} inView={updatedRefs[2].inView}/>
-      <div className='div'>TEST</div>
+
+      <Contact  element={ref} inView={visible}/>
+      <Showcase element={updatedRefs[2].element} inView={updatedRefs[2].inView}/>
+      <Blog/>
 
       <MobileSidebar/>
       <DesktopSidebar/>

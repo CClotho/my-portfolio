@@ -24,13 +24,22 @@ const useIntersectionObserver = function () {
                 const index = updatedRefs.findIndex(ref => ref.element.current === entry.target); // returns -1 if no element is found
                 if (index !== -1) { // we then check if it's -1 else if not then there's an element
                     if (entry.isIntersecting) {
+                        console.log("entry is intersecting", entry.isIntersecting)
                         setUpdatedRefs((prevState) => {
                             const newRefs = [...prevState]; // shallow copy of objects but creating a new array in memory
                             newRefs[index].inView = entry.isIntersecting;
                             return newRefs;
                         }); 
                      
-                        observer.unobserve(entry.target);
+                        //observer.unobserve(entry.target);
+                        return;
+                    }
+                    else {
+                        setUpdatedRefs((prevState) => {
+                            const newRefs = [...prevState]; // shallow copy of objects but creating a new array in memory
+                            newRefs[index].inView = false;
+                            return newRefs;
+                        }); 
                     }
                  
                 }
@@ -40,7 +49,7 @@ const useIntersectionObserver = function () {
             
 
            
-        }, {threshold:1, rootMargin: '0px 0px 300px'}); 
+        }, {threshold:0.5}); //rootMargin: '0px 0px 300px'
 
         updatedRefs.forEach((ref: RefType)=> {
             if(ref.element.current) {
@@ -76,3 +85,24 @@ export default useIntersectionObserver;
  * isInView or visibility to true then return the value
  */
 
+
+/*  entries.forEach((entry) => {
+               
+                const index = updatedRefs.findIndex(ref => ref.element.current === entry.target); // returns -1 if no element is found
+                if (index !== -1) { // we then check if it's -1 else if not then there's an element
+                    if (entry.isIntersecting) {
+                        console.log("entry is intersecting", entry.isIntersecting)
+                        setUpdatedRefs((prevState) => {
+                            const newRefs = [...prevState]; // shallow copy of objects but creating a new array in memory
+                            newRefs[index].inView = entry.isIntersecting;
+                            return newRefs;
+                        }); 
+                     
+                        //observer.unobserve(entry.target);
+                    }
+                 
+                }
+                
+                
+            });
+             */
