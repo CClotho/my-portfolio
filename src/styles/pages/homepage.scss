@@ -66,8 +66,13 @@
    
 }
 
-
-.about-mobile, .contact-mobile, 
+#home a {
+    background-color: white;
+}
+.home {
+    background-color: white;
+}
+.home-mobile, .about-mobile, .contact-mobile, 
 .showcase-mobile, .blog-mobile {
     transform: translateX(-100%);
    
@@ -263,8 +268,8 @@
 .animate {
     animation: links-animation 200ms forwards;
 }
-
-.about-mobile.animate { animation-delay: 0ms; }      /* No delay for the first item */
+.home-mobile.animate { animation-delay: 0ms; }   
+.about-mobile.animate { animation-delay: 50ms; }      /* No delay for the first item */
 .contact-mobile.animate { animation-delay: 100ms; }         /* 100ms delay for the second item */
 .showcase-mobile.animate { animation-delay: 150ms; }        /* 200ms delay for the third item */
 .blog-mobile.animate { animation-delay: 200ms; } 

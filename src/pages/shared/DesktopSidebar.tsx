@@ -9,6 +9,7 @@ const DesktopSidebar = function(): React.JSX.Element {
 
         <nav className="desktop-sidebar">
             <ul className="desktop-sidebar-list">
+                <li id="home"><a href="#home-section" className="home">Home</a></li>
                 <li id="about"><a href="#about-section" className="about">About</a></li>
                 <li id="contact"><a href="#contact-section" className="contact">Contact</a></li>
                 <li id="showcase"><a href="#showcase-section" className="showcase">Showcase</a></li>

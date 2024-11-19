@@ -13,6 +13,7 @@ const MobileSidebar = function(): React.JSX.Element {
         <nav className="mobile-sidebar">
             <div className="menu-icon" onClick={handleMenu}></div>
             <ul className={`mobile-sidebar-list ${isToggle ? "show" : "hide"}`}>
+                <li id="home"><a href="#home-section" className={`home-mobile ${isToggle ? 'animate' : ''}`}>Home</a></li>
                 <li id="about" className={`about-mobile ${isToggle ? 'animate' : ''}`}><a href="#about-section" className="about">About</a></li>
                 <li id="contact" className={`contact-mobile ${isToggle ? 'animate' : ''}`}><a href="#contact-section" className="contact">Contact</a></li>
                 <li id="showcase" className={`showcase-mobile ${isToggle ? 'animate' : ''}`}><a href="#showcase-section" className="showcase">Showcase</a></li>

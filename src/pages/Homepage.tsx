@@ -3,7 +3,7 @@ import { memo } from "react";
 const Homepage = function({element, inView}: RefType): React.JSX.Element {
 
     return (
-       <header className="header-main-nav " ref={element} id="">
+       <header id="home-section" className="header-main-nav " ref={element}>
          <nav className={`main-nav ${inView ? "" : ""}`}>
             <div className="links" id="about"> 
                 <a href="#about-section" className="about"> About</a>
