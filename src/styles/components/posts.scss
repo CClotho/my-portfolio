@@ -1,0 +1,14 @@
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts :nth-child(1) {
+   // z-index: 7;
+}
+
+.posts :nth-child(2) {
+  
+   // z-index: 6;
+}

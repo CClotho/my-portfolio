@@ -1,0 +1,64 @@
+@use '../abstract/colors';
+
+.card {
+
+ //background-color: colors.$card-bg;
+
+ margin-left: 12px;
+ width: 500px;
+ height: 300px;
+ background-color: colors.$main-bg;
+ transition: transform 300ms linear;
+ transform-origin: center;
+ box-shadow: 4px 4px 4px black;
+
+    @media screen and (max-width: 768px) {
+       max-width: 250px;
+       height: 100px;
+ }
+}
+.drawer-wrapper {
+    display: flex;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px; // change size of drawer
+    @media screen and (max-width: 768px) {
+      
+    }
+}
+
+.drawer-inside {
+    position: relative;
+
+    z-index:-1;
+    width: 440px; // inside cover the black
+    height: 100px;
+    transform: translateY(90%) perspective(100px) rotateX(35deg) scale(1);
+    background-color: black;
+    transform-origin: center;
+    @media screen and (max-width: 768px) {
+       display: none;
+    }
+    
+}
+
+//drawer-animation
+.card:hover {
+    transform: translateY(20%) scale(1.1);
+
+    @media screen and (max-width: 768px) {
+       transform: none;
+    }
+}
+.card-title {
+
+}
+
+.card-text {
+
+}

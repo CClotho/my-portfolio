@@ -10,7 +10,6 @@ import useSoloObserver from './components/hooks/useSoloObserver';
 import Showcase from './pages/Showcase';
 import Blog from './pages/Blog';
 
-
 function App() {
  // update the ref inside the observer when checking entry.isIntersecting.
  // to true else false.
