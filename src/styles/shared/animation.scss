@@ -1,0 +1,153 @@
+@keyframes slide-in-no-bg {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        background-color: black;
+        visibility: visible;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideWithFade {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.show-section {
+    animation: fadeEffect 1000ms forwards;
+    will-change: opacity, visibility;
+}
+
+.slide-in-horizontally {
+    animation: slide-in-no-bg 1000ms forwards;
+    
+}
+.slide-in-vertically {
+    animation: slideWithFade 1000ms forwards;
+    will-change: transform, opacity, visibility;
+}
+
+.slide-in-li-vertically {
+    animation: slideWithFade 1000ms 1.2s forwards;
+    will-change: transform, opacity, visibility;
+}
+
+.slide-in-active {
+    animation: slide-in 1000ms forwards;
+    will-change: transform, opacity, visibility;
+}
+
+:target {
+    animation: fadeEffect 1000ms forwards;
+    will-change: opacity, visibility;
+}
+
+@keyframes highlights {
+    0% {
+        visibility: visible;
+        background-position: 50% 0;
+        background-size: 5% 100%;
+    }
+    25% {
+        background-size: 10% 100%;
+    }
+    50% {
+        background-size: 15% 100%;
+    }
+    75% {
+        background-size: 20% 100%;
+    }
+    100% {
+        visibility: visible;
+        background-position: 50% 0;
+        background-size: 25% 100%;
+    }
+}
+
+.highlight {
+    animation: highlights 500ms linear 0.7s forwards;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    color: white;
+    will-change: background-position, background-size, visibility;
+}
+
+@keyframes fill-letters {
+    0% {
+        visibility: visible;
+        color: transparent;
+        background-clip: text;
+        background-position: -100% 0;
+        background-size: 0% 100%;
+    }
+    25% {
+        background-size: 25% 100%;
+    }
+    50% {
+        background-size: 50% 100%;
+    }
+    75% {
+        background-position: 0 0;
+        background-size: 80% 100%;
+    }
+    100% {
+        visibility: visible;
+        color: transparent;
+        background-clip: text;
+        background-position: 0 0;
+        background-size: 100% 100%;
+    }
+}
+
+.fill-letter-white {
+    animation: fill-letters 1000ms ease-in forwards;
+    background-image: linear-gradient(to right, white, white);
+    background-repeat: no-repeat;
+    will-change: color, background-position, background-size, visibility;
+}
+
+.fill-letter-white-delay {
+    animation: fill-letters 500ms ease-in forwards;
+    background-image: linear-gradient(to right, white, white);
+    background-repeat: no-repeat;
+    will-change: color, background-position, background-size, visibility;
+}
+
+.fill-letter-delay {
+    animation: fill-letters 1000ms ease-in 1s forwards;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    will-change: color, background-position, background-size, visibility;
+}

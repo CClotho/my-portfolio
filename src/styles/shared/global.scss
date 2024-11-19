@@ -1,0 +1,55 @@
+@use '../abstract/fonts';
+
+$font-main: "Lilita One", sans-serif;
+$font-sigmar: "Sigmar",sans-serif;
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sigmar-regular {
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+body {
+    font-size: 18px;
+    //position: relative;
+  
+}
+
+h2 {
+    font-family: $font-sigmar;
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .contact-list li {
+        font-size: 1.2em;
+    }
+}
+
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+  }
+  
+  /* Extra large screens */
+  @media (min-width: 1440px) {
+    
+    body {
+      font-size: 22px;
+    }
+}

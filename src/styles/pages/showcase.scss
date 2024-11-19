@@ -1,0 +1,25 @@
+@use '../abstract/colors';
+#showcase-section {
+    display: flex;
+    margin-top: 16px;
+    min-height: 100vh;
+ 
+    
+    border: 3px dashed colors.$showcase-bg
+}
+
+#showcase-section, .showcase-information {
+    border-radius: 16px;
+}
+.showcase-information {
+   flex: 1;
+    visibility: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: colors.$showcase-bg;
+}
+
+.showcase-information h2, .showcase-information h3 {
+  
+}

@@ -1,0 +1,17 @@
+@use '../abstract/colors';
+#blog-section {
+    margin-top: 16px;
+    display: flex;
+    min-height: 100vh;
+    border-radius: 16px;
+    border: 3px dashed colors.$blog-bg;
+    visibility: hidden;
+ 
+}
+
+.blog-posts {
+    flex:1;
+    border-radius: 16px;
+    background-color: colors.$blog-bg;
+    visibility: hidden;
+}
