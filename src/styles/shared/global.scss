@@ -3,6 +3,7 @@
 $font-main: "Lilita One", sans-serif;
 $font-sigmar: "Sigmar",sans-serif;
 
+
 .lilita-one-regular {
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
@@ -13,7 +14,15 @@ $font-sigmar: "Sigmar",sans-serif;
     font-family: "Sigmar", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.outfit-light {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
   }
+  
   
 body {
     font-size: 18px;
