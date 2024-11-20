@@ -15,10 +15,17 @@
     @media screen and (max-width: 768px) {
        max-width: 250px;
        height: 100px;
- }
+    }
 }
 .drawer-wrapper {
     display: flex;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+     }
+
+   
 }
 
 .drawer {
@@ -31,6 +38,7 @@
       
     }
 }
+
 
 .drawer-inside {
     position: relative;

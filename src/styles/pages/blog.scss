@@ -11,8 +11,10 @@
 
 .blog-posts {
     flex:1;
+    min-height: 100vh;
     border-radius: 16px;
     background-color: colors.$blog-bg;
     visibility: hidden;
 }
+
 
