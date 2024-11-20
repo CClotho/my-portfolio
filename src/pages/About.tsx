@@ -11,7 +11,7 @@ const About = function ({element, inView}: RefType): React.JSX.Element {
                <h2 className="about-h2"> <span className={`h2-span ${inView ? 'fill-letter-white' : ''}`}> Mabuhay!</span> </h2>
                 <div className={`about-information ${inView ? 'slide-in-vertically' : ''}`}>
                     <p>I'm Kris, and I'm a front-end developer and programmer from the Philippines. Back then, I was just taking the digital world and
-                    those technology tools for granted, and that changed when I finally recognized the value of programming and how these technology tools made it possible to make changes in this world and in the lives of others.
+                    these technology tools for granted, and that changed when I finally recognized the value of programming and how these technology tools made it possible to make changes in this world and in the lives of others.
                     Ever since that moment, I have taken a keen interest in how things work in the web, be it how each website or web application is designed and developed and how data is passed safely in the world of the web.
                     </p>
 
