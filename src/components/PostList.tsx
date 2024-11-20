@@ -13,7 +13,7 @@ const PostList = function():React.JSX.Element {
            {/* Map this later and past post setter*/}
            <section className="posts-wrapper">
                 <Card id={5}title="useCallback" description="useCallback is useful for ...." setPost={setPost}/>
-                <Card id={6}title="useCallback" description="useCallback is useful for ...."/>
+                <Card id={6}title="React.Memo" description="useCallback is useful for ...." setPost={setPost}/>
                 <Card id={7}title="useCallback" description="useCallback is useful for ...."/>
                 <Card id={8}title="useCallback" description="useCallback is useful for ...."/>
              
@@ -21,6 +21,7 @@ const PostList = function():React.JSX.Element {
 
              {post &&
              (<article className="active-article" key={post.id}>
+                <button id="close-article" onClick={() => setPost(null)}> Close</button>
                 <h3 className="card-title">{post.title}</h3>
                 <p className="card-text">{post.description}</p>
              </article>) }

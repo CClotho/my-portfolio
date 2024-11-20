@@ -25,6 +25,10 @@ h2 {
     font-family: $font-sigmar;
 }
 
+button {
+    font-family: $font-main;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
     body {
