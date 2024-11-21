@@ -11,8 +11,8 @@
 }
 
 .blog-posts {
-    width: 100%;
-    max-width: 100%;
+    width: 100%; //added this to fit
+    max-width: 100%; //added this to fit
     min-height: 100vh;
     border-radius: 16px;
     background-color: colors.$blog-bg;

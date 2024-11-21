@@ -1,7 +1,7 @@
 
 import Card from "./Card";
-import Test, { PostProp } from "./Test";
-import { useState, useEffect,useRef } from "react";
+import Test, {PostProp} from "./Test";
+import { useState, useEffect,useRef, Fragment } from "react";
 import {data, CallbackContent, code_one, ParentCode, ChildCode, code_two, CallbackFirstPart, CallBackMidPart, code_three, CallbackMidPart2, code_four, CallBackEndPart, code_five, code_visualization, Visualization_Explanation} from "../data/data";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {  gruvboxDark, nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -10,10 +10,11 @@ import remarkGfm from "remark-gfm";
 
 const TestList = function():React.JSX.Element {
     //{id:1, title: "useCallback", description: "useCallback is useful for...", setPost: null}
-    const [post, setPost] = useState<PostProp | null>(null);
+    const [post, setPost] = useState<PostProp| null>(null);
+    const [posts, setPosts]= useState<PostProp[] | []>(data)
 
     useEffect(() => {
-     
+        
 
     }, []); 
     
@@ -22,15 +23,21 @@ const TestList = function():React.JSX.Element {
              
            {/* Map this later and past post setter*/}
            <section className="posts-wrapper">
-                <Test id={data[0].id}
-                title={data[0].title}
-                start={data[0].start}
-                mid={data[0].mid}
-                end={data[0].end}
-                code_one={data[0].code_one}
-                code_two={data[0].code_two}
-                code_three={data[0].code_three}
-                setPost={setPost}/>
+
+                {posts && posts.length > 0 ? posts.map((post)=> {
+                return (
+                    <div key={post.id} onClick={() => setPost(post)}>
+                        <Test 
+                        id={post.id}
+                        title={post.title}
+                        start={post.start}
+                        />
+                     </div>
+                )
+                })
+                 : (<div> There are no posts available</div>)}
+                
+            
                
              
            </section>
@@ -41,59 +48,59 @@ const TestList = function():React.JSX.Element {
                
               
                 {/* TODO: ADD MARKDOWN HERE*/}
-                <ReactMarkdown children={CallbackFirstPart}
+                <ReactMarkdown children={post.start}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
                 <br/>
 
-                <ReactMarkdown children={ParentCode}
+                <ReactMarkdown children={post.start_part2}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
                 
                 <div className="code">
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_one}
+                    {post.code_one}
                 </SyntaxHighlighter>
                 </div>
 
-                <ReactMarkdown children={ChildCode}
+                <ReactMarkdown children={post.start_part3}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
 
                <div className="code">
                   
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_two}
+                    {post.code_two}
                 </SyntaxHighlighter>
                </div>
 
-               <ReactMarkdown children={CallBackMidPart}
+               <ReactMarkdown children={post.mid}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
 
                 <div className="code">
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_three}
+                    {post.code_three}
                 </SyntaxHighlighter>
                 </div>
 
-                <ReactMarkdown children={CallbackMidPart2}
+                <ReactMarkdown children={post.mid_part2}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
 
                 <div className="code">
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_four}
+                    {post.code_four}
                 </SyntaxHighlighter>
                 </div>
 
                 <div className="code">
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_visualization}
+                    {post.code_five}
                 </SyntaxHighlighter>
                 </div>
 
-                <ReactMarkdown children={CallBackEndPart}
+                <ReactMarkdown children={post.end}
                 className="reactMarkdown" 
                 remarkPlugins={[remarkGfm]}/>
 
@@ -101,7 +108,7 @@ const TestList = function():React.JSX.Element {
 
                 <div className="code">
                 <SyntaxHighlighter language="typescript" style={nightOwl}>
-                    {code_five}
+                    {post.code_six}
                 </SyntaxHighlighter>
                 </div>
        

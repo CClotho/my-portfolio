@@ -68,7 +68,7 @@
 }
 .active-article {
 
-   max-width: 720px;
+   max-width: 720px; //added this to fit
    height: 95vh;
    border-radius: 16px;
    position: relative;
@@ -108,7 +108,7 @@
    margin-right: 1em;
    letter-spacing: normal;
    @media screen and (max-width: 1000px) {
-      max-width: 100%;;
+      max-width: 100%;//added this to fit
       
       
    }

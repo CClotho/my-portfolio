@@ -4,37 +4,45 @@ export interface CardProp2{
     id: number,
     title: string,
     start: string | null,
-    mid: string | null,
-    end: string | null,
-    code_one: string | null,
-    code_two: string | null,
-    code_three: string | null
     setPost: React.Dispatch<React.SetStateAction<PostProp |null>>; 
 
+}
+
+export interface CardObject{
+    id: number,
+    title: string,
+    start: string | null,
+   
 }
 
 export interface PostProp{
     id: number,
     title: string,
-    start: string | null,
-    mid: string | null,
-    end: string | null,
-    code_one: string | null,
-    code_two: string | null,
-    code_three: string | null
+    start: string 
+    start_part2: string 
+    start_part3: string ,
+    mid: string 
+    mid_part2: string,
+    end: string ,
+    code_one: string ,
+    code_two: string,
+    code_three: string ,
+    code_four: string ,
+    code_five: string ,
+    code_six: string ,
 }
 
 
 const Test = function
-({id, title, start, mid, end, code_one, code_two, code_three, setPost}
-: CardProp2):React.JSX.Element {
+({id, title, start}
+: CardObject):React.JSX.Element {
     
    
 
     const limitDescription = useMemo(() => {
         if (!start) return ""; // in case description is empty.
         if (start.length > 40) {
-            return start.substring(0, 50) + "...";
+            return start.substring(4, 50) + "...";
         }
         return start;
     }, [start]);
@@ -42,7 +50,7 @@ const Test = function
     
     return (
 
-        <div className="drawer-wrapper" onClick={() => setPost?.({id, title,start, mid,end, code_one, code_two, code_three})}> {/* ? optional chaining only call setPost if it's not null*/} 
+        <div className="drawer-wrapper" > {/* ? optional chaining only call setPost if it's not null*/} 
           <div className="drawer">
           <div className="drawer-inside"></div>
              <article className="card"key={id}>
