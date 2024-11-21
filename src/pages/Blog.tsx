@@ -2,6 +2,7 @@ import useSoloObserver from "../components/hooks/useSoloObserver";
 
 
 import PostList from "../components/PostList";
+import TestList from "../components/TestList";
 
 const Blog = function (): React.JSX.Element {
     const {ref, visible} = useSoloObserver();
@@ -13,7 +14,7 @@ const Blog = function (): React.JSX.Element {
                     <div className={`blog-posts ${visible ? 'slide-in-horizontally' : ''}`}>
                     <h2> Blog </h2>
                     <h3> Work In Progress</h3>
-                     <PostList/>
+                     <TestList/>
                     </div>
 
                   

@@ -1,18 +1,7 @@
 import { useMemo } from "react";
 import { PostProp } from "./PostList";
 
-export interface CardProp2{
-    id: number,
-    title: string,
-    start: string | null,
-    mid: string | null,
-    end: string | null,
-    code_one: string | null,
-    code_two: string | null,
-    code_three: string | null
-    setPost: React.Dispatch<React.SetStateAction<CardProp>> | null; 
 
-}
 
 export interface CardProp {
    id:number;

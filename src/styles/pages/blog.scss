@@ -1,5 +1,6 @@
 @use '../abstract/colors';
 #blog-section {
+    
     margin-top: 16px;
     display: flex;
     min-height: 100vh;
@@ -10,11 +11,16 @@
 }
 
 .blog-posts {
-    flex:1;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     border-radius: 16px;
     background-color: colors.$blog-bg;
     visibility: hidden;
+
+    @media screen and (max-width: 768px){
+        visibility: visible
+    }
 }
 
 
