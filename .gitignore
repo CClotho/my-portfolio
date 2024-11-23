@@ -11,9 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
-src/Test
-src/components/TestList
-src/data
+src/components/Test.tsx
+src/components/TestList.tsx
+src/data/data.ts
 
 # Editor directories and files
 .vscode/*

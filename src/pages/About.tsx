@@ -52,6 +52,3 @@ const About = function ({element, inView}: RefType): React.JSX.Element {
 }
 
 export default About;
-
-//TODO: Make Pages simple for now
-//ref={updatedRefs[0].element} className={`${updatedRefs[0].inView ? "pink": " "}`}

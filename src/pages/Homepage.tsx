@@ -25,9 +25,3 @@ const Homepage = function({element, inView}: RefType): React.JSX.Element {
 
 export default memo(Homepage);
 
-/**
- * The purpose of setting two different selectors for .contact,& #contact
- * is to set the border otherwise the border won't be seen because of the same color.
- * 
- * 
- */
