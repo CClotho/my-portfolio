@@ -70,7 +70,7 @@ The **JavaScript Runtime Environment** comprises the following:
 **Web API**: Manages background tasks like timers and UI events.
 **Event Loop**: Acts as the "supervisor" deciding which tasks to execute in the call stack and monitoring pending tasks in the queues.
         
-As you can see above we mentioned Web API and which handles background tasks like timers and UI but what is a Web API?
+As you can see above we mentioned Web API which handles background tasks like timers and UI but what is a Web API?
 
 Web API is a web worker, a type of JavaScript thread that makes it possible to run a script operation in a background thread separate from the main execution thread of a web application.
 
@@ -87,8 +87,6 @@ The order of execution of each tasks are based on priority  which all synchronou
  1. Synchronous code executes in the call stack.
  2. Promises in the microtask queue are processed.
  3. Async operations in the task queue (e.g., \`setTimeout\`) are handled last.
-
-The event loop will only check and processes tasks in the microtask queue and task queue if there are no more synchronous operations in the call stack. 
 `;
 
 
@@ -235,9 +233,9 @@ export const data: Array<PostProp> = [
         start: EventLoopStart,    
         start_part2: EventLoopStart2,
         start_part3: EventLoopStart3,
-        mid: "",
-        mid_part2: EventLoopMid,
-        end: EventLoopEnd,
+        mid: EventLoopMid,
+        mid_part2: EventLoopEnd,
+        end: `The event loop will only check and process tasks in the microtask queue and task queue after all synchronous operations in the call stack have been completed`,
 
         code_one: `
         function studyWhileEating() {
@@ -283,8 +281,7 @@ export const data: Array<PostProp> = [
         */`,
         code_three: "",
         code_four: "",
-        code_five: "",
-        code_six: `
+        code_five: `
         console.log("Start")
 
 
@@ -316,7 +313,7 @@ export const data: Array<PostProp> = [
         console.log("End")
 
         `,
-
+        code_six:"",
 
     }
 ]
