@@ -42,7 +42,7 @@ const Card = function
     const limitDescription = useMemo(() => {
         if (!start) return ""; // in case description is empty.
         if (start.length > 40) {
-            return start.substring(10, 70) + "...";
+            return start.substring(40, 80) + "...";
         }
         return start;
     }, [start]);
@@ -55,9 +55,9 @@ const Card = function
           <div className="drawer-inside"></div>
              <article className="card"key={id}>
             
-                <h3 className="card-title">{title}</h3>
-                <p className="card-text">{limitDescription}</p>
-                <span> Continue Reading </span>
+                <h3 className="card-title sigmar-regular">{title}</h3>
+                {/* <p className="card-text">{limitDescription}</p> */}
+                <span className="continue-reading lilita-one-regular"> Continue Reading </span>
              </article>
         </div>
         </div>

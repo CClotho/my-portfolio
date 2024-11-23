@@ -10,7 +10,7 @@ const Blog = function (): React.JSX.Element {
             <section id="blog-section" ref={ref}  className={`${visible ? 'show-section' : ''}`}> 
                 
                     <div className={`blog-posts ${visible ? 'slide-in-horizontally' : ''}`}>
-                    <h2> Blog </h2>
+                    <h2> Blog Posts </h2>
                     <h3> Work In Progress</h3>
                      <PostList/>
                     </div>
