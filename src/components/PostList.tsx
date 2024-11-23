@@ -1,38 +1,124 @@
 
 import Card from "./Card";
-import { CardProp } from "./Card";
-import { useState } from "react";
 
-export interface PostProp {
-    id:number;
-    title: string;
-    description: string;
-   
-  
-
-}
-
+import { useState, useEffect } from "react";
+import {data} from "../data/data";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { PostProp } from "./Card";
 const PostList = function():React.JSX.Element {
     //{id:1, title: "useCallback", description: "useCallback is useful for...", setPost: null}
-    const [post, setPost] = useState<PostProp | null>(null);
+    const [post, setPost] = useState<PostProp| null>(null);
+    const [posts, setPosts]= useState<PostProp[] | []>(data)
+
+    useEffect(() => {
+        
+
+    }, []); 
     
     return (
         <section className="posts">
              
-           {/* Map this later and past post setter*/}
+          
            <section className="posts-wrapper">
-                <Card id={5}title="useCallback" description="useCallback is useful for ...." setPost={setPost}/>
-                <Card id={6}title="React.Memo" description="useCallback is a hook in React that simply caches your function by returning the same function definition or function reference between re-renders unless its dependencies change, then that function definition that is created in that render will be used. As we know, whenever a re-render happens in React, everything is recreated again from scratch, and React uses Object.is() to compare the difference between each state and prop, which in the case of objects, it checks if it references the same reference in memory, and in terms of primitives, it checks whether its the same value as the previous one." setPost={setPost}/>
-                <Card id={7}title="useCallback" description="useCallback is useful for ...." setPost={null}/> {/* this what causes for me to add optional ? chaning to only call setPost if it's not null or there's call back function that is passed which obviously doesn't make a sense that I pass null for a call back function LOL my mistake here*/}
-                <Card id={8}title="useCallback" description="useCallback is useful for ...."  setPost={null}/>
+
+                {posts && posts.length > 0 ? posts.map((post)=> {
+                return (
+                    <div key={post.id} onClick={() => setPost(post)}>
+                        <Card
+                        id={post.id}
+                        title={post.title}
+                        start={post.start}
+                        />
+                     </div>
+                )
+                })
+                 : (<div> There are no posts available</div>)}
+                
+            
+               
              
            </section>
 
              {post ? 
              (<article className={`${post ? "active-article" : "inactive"}`} key={post.id}>
                 <button id="close-article" onTouchStart={() => setPost(null)} onClick={() => setPost(null)}> Close</button>
-                <h3 className="active-title">{post.title}</h3>
-                <p className="active-text outfit-light">{post.description}</p>
+               
+              
+                {/* TODO: ADD MARKDOWN HERE*/}
+                <ReactMarkdown children={post.start}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+                <br/>
+
+                <ReactMarkdown children={post.start_part2}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+                
+                <div className="code">
+                <SyntaxHighlighter language="typescript" style={nightOwl}>
+                    {post.code_one}
+                </SyntaxHighlighter>
+                </div>
+
+                 {/*Got problem here */ }
+                <ReactMarkdown children={post.start_part3}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+               
+               <div className="code"> 
+                <SyntaxHighlighter language="typescript" style={nightOwl}>
+                    {post.code_two}
+                </SyntaxHighlighter>
+               </div>
+
+               <ReactMarkdown children={post.mid}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+
+               {post.code_three && post.code_three.length > 0 && (
+                  <div className="code">
+                  <SyntaxHighlighter language="typescript" style={nightOwl}>
+                      {post.code_three}
+                  </SyntaxHighlighter>
+                  </div>
+               )}
+
+                {post.code_four && post.code_four.length > 0 && (
+                  <div className="code">
+                  <SyntaxHighlighter language="typescript" style={nightOwl}>
+                      {post.code_four}
+                  </SyntaxHighlighter>
+                  </div>
+               )}
+
+               
+                <ReactMarkdown children={post.mid_part2}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+
+                {post.code_five && post.code_five.length > 0 && (
+                  <div className="code">
+                  <SyntaxHighlighter language="typescript" style={nightOwl}>
+                      {post.code_five}
+                  </SyntaxHighlighter>
+                  </div>
+                )}
+
+                <ReactMarkdown children={post.end}
+                className="reactMarkdown" 
+                remarkPlugins={[remarkGfm]}/>
+
+                {post.code_six && post.code_six.length > 0 && (
+                  <div className="code">
+                  <SyntaxHighlighter language="typescript" style={nightOwl}>
+                      {post.code_six}
+                  </SyntaxHighlighter>
+                  </div>
+                )}
+       
              </article>) : (<article className="inactive"></article>)}
         </section>
        

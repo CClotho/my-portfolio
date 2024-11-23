@@ -42,7 +42,7 @@ const Test = function
     const limitDescription = useMemo(() => {
         if (!start) return ""; // in case description is empty.
         if (start.length > 40) {
-            return start.substring(4, 50) + "...";
+            return start.substring(29, 60) + "...";
         }
         return start;
     }, [start]);
@@ -50,7 +50,7 @@ const Test = function
     
     return (
 
-        <div className="drawer-wrapper" > {/* ? optional chaining only call setPost if it's not null*/} 
+        <div className="drawer-wrapper" > 
           <div className="drawer">
           <div className="drawer-inside"></div>
              <article className="card"key={id}>

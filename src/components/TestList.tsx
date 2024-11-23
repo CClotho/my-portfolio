@@ -2,9 +2,9 @@
 import Card from "./Card";
 import Test, {PostProp} from "./Test";
 import { useState, useEffect,useRef, Fragment } from "react";
-import {data, CallbackContent, code_one, ParentCode, ChildCode, code_two, CallbackFirstPart, CallBackMidPart, code_three, CallbackMidPart2, code_four, CallBackEndPart, code_five, code_visualization, Visualization_Explanation} from "../data/data";
+import {data} from "../data/data";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import {  gruvboxDark, nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -21,7 +21,7 @@ const TestList = function():React.JSX.Element {
     return (
         <section className="posts">
              
-           {/* Map this later and past post setter*/}
+          
            <section className="posts-wrapper">
 
                 {posts && posts.length > 0 ? posts.map((post)=> {
