@@ -13,7 +13,7 @@ dist-ssr
 *.local
 src/components/Test.tsx
 src/components/TestList.tsx
-src/data/data.ts
+
 
 # Editor directories and files
 .vscode/*
