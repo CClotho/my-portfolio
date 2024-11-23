@@ -70,7 +70,7 @@ The **JavaScript Runtime Environment** comprises the following:
 **Web API**: Manages background tasks like timers and UI events.
 **Event Loop**: Acts as the "supervisor" deciding which tasks to execute in the call stack and monitoring pending tasks in the queues.
         
-As you can see above we mentioned Web API and how it handles background tasks like timers and UI but what is a Web API?
+As you can see above we mentioned Web API and which handles background tasks like timers and UI but what is a Web API?
 
 Web API is a web worker, a type of JavaScript thread that makes it possible to run a script operation in a background thread separate from the main execution thread of a web application.
 
