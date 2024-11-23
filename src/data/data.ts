@@ -46,7 +46,7 @@ So below we wrapped our onHandleClick function with useCallback and specified in
 `;
 
 const EventLoopStart =
-`## JavaScript Event loop explained in 10 minutes
+`## JavaScript Event loop explained in 15 minutes
 
 JavaScript is a single-threaded language, which means it's a blocking execution and has one call stack, so it can only execute one task at a time, so whenever we perform a synchronous operation in our code, the browser becomes unresponsive till the synchronous operation is finished or is done being evaluated.`;
 
@@ -229,13 +229,13 @@ export const data: Array<PostProp> = [
     },
     {
         id: 1244,
-        title: "JavaScript Event loop explained in 10 minutes",
+        title: "JavaScript Event loop explained in 15 minutes",
         start: EventLoopStart,    
         start_part2: EventLoopStart2,
         start_part3: EventLoopStart3,
         mid: EventLoopMid,
         mid_part2: EventLoopEnd,
-        end: `The event loop will only check and process tasks in the microtask queue and task queue after all synchronous operations in the call stack have been completed`,
+        end: `The event loop will only check and process tasks in the microtask queue and task queue after all synchronous operations in the call stack have been completed.`,
 
         code_one: `
         function studyWhileEating() {
