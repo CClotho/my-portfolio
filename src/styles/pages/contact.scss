@@ -58,7 +58,13 @@ figure  {
 }
 
 figcaption a {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
+}
+figcaption {
+  display: flex;
+  flex-direction: column;
 }
 
 #alien, #jester {
@@ -69,3 +75,10 @@ figcaption a {
     width: 150px;
   }
 }
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
