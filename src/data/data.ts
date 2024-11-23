@@ -60,7 +60,7 @@ const EventLoopMid =
 
 JavaScript Runtime Environment is comprises  of call stack, task queue (also refers to callback queue), microtask queue,  web api, and the event loop.
 
-What event loop does is it act as the supervisor that decides which tasks will be executed in the call stack and monitors each place if there are tasks needed to be executed in the call stack.
+What event loop does is it acts as the supervisor that decides which tasks will be executed in the call stack and monitors each place if there are tasks needed to be executed in the call stack.
 
 The **JavaScript Runtime Environment** comprises the following:
 
